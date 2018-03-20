@@ -1,0 +1,31 @@
+<div id="todo_list">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+  <input v-model="todo">
+  <button v-on:click="add">Add</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+// ボタンとinput要素を追加して、todoリストにtodoを追加できるようにしよう
+var app4 = new Vue({
+  el: '#todo_list',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ],
+    todo : ''
+  },
+  methods: {
+    add: function () {
+      this.todos.push({ text: this.todo });
+      this.todo = '';
+    }
+  }
+})
+</script>

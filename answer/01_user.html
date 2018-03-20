@@ -1,0 +1,15 @@
+<div id="user">
+{{last_name}} {{first_name}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+// 苗字 名前 をhtmlに表示できるようにVueを作ろう
+var app = new Vue({
+  el: '#user',
+  data: {
+    last_name : 'Kazuhiro',
+    first_name : 'Saji'
+  }
+});
+</script>
