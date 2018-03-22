@@ -1,0 +1,30 @@
+<div id="practice-3">
+  <user-list v-for="student in students" v-bind:user="student"></user-list>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+Vue.component('user-list', {
+  props: ['user'],
+  template:  `
+              <ul>
+                <li>ID : {{user.id }}</li>
+                <li>名前 : {{ user.last_name + user.first_name }}</li> 
+                <li>学校名 : {{ user.school }}</li>
+              </ul>
+  `
+})
+
+var app7 = new Vue({
+  el: '#practice-3',
+  data: {
+    students: [
+      { id: 1, last_name: '山田', first_name: '太郎', school: '明訓'},
+      { id: 2, last_name: '桜木', first_name: '花道', school: '湘北'},
+    ]
+  }
+})
+
+</script>
